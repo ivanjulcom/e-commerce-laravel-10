@@ -30,7 +30,6 @@
     </style>
 
 </head>
-
 <body>
     <div class="container">
         <div class="row my-3">
@@ -56,8 +55,6 @@
                             <form action="https://demo.joshadmin.com/admin/signin" autocomplete="on" method="post" role="form"
                                 id="login_form" class="my-3">
                                 <h3>Log In</h3>
-                                <!-- CSRF Token -->
-                                <input type="hidden" name="_token" value="nd6vXKtmOLtyiCf79AZdo2vhfPQEMbThBzILdn6A" />
                                 <div class="form-group ">
                                     <label style="margin-bottom:0px;" for="email" class="uname control-label"> <i
                                             class="livicon" data-name="mail" data-size="16" data-loop="true"
@@ -100,8 +97,9 @@
                             </form>
                         </div>
                         <div id="register" class="animate form">
-                            <form action="https://demo.joshadmin.com/admin/signup" autocomplete="on" method="post" role="form"
+                            <form action="{{ route('signup') }}" autocomplete="on" method="post" role="form"
                                 id="register_here">
+                                {{ csrf_field() }}
                                 <h3>Sign Up</h3>
 
                                 <div class="form-group ">
